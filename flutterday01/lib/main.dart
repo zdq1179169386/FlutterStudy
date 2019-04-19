@@ -22,6 +22,7 @@ import 'package:flutterday01/pages/Widget/IndexedStack.dart';
 import 'package:flutterday01/pages/Widget/GridView.dart';
 import 'package:flutterday01/pages/Widget/Flow.dart';
 import 'package:flutterday01/pages//cupertino/CupertinoTabPage.dart';
+import 'package:flutterday01/pages/ImageDemo/ImageDemoPage.dart';
 
 void main() {
   runApp(new MaterialApp(
@@ -48,6 +49,8 @@ void main() {
       '/GridView':(_)=> new ZDGridView(),
       '/Flow':(_)=> new ZDFlow(),
       '/CupertinoTabPage':(_)=> new ZDCupertinoTabPage(),
+      '/ImageDemoPage' : (_)=> new ImageDemoPage(),
+      '/ImageDemoPage1' : (_)=> new ImageDemoPage1(),
     },
     theme: new ThemeData(
       primarySwatch: Colors.blue,

@@ -30,7 +30,7 @@ const List<NormalModel> listViewArray = [
   ),
   const NormalModel(
       title: 'flutrer 图片',
-      routePath: ''
+      routePath: 'ImageDemoPage'
   ),
   const NormalModel(
       title: 'flutrer 插件的使用',
@@ -52,6 +52,7 @@ class FirstTab extends StatelessWidget {
     );
   }
 }
+
 //页面跳转
 void _navigateToPage(BuildContext context,String page){
   print('Page : $page');
