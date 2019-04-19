@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutterday01/cupertino/CupertinoFirstPage.dart';
-import 'package:flutterday01/cupertino/CupertinoSecondPage.dart';
-import 'package:flutterday01/cupertino/CupertinoThirdPage.dart';
+import 'package:flutterday01/pages//cupertino/CupertinoFirstPage.dart';
+import 'package:flutterday01/pages//cupertino/CupertinoSecondPage.dart';
+import 'package:flutterday01/pages//cupertino/CupertinoThirdPage.dart';
 
 class ZDCupertinoTabPage extends StatelessWidget {
   @override

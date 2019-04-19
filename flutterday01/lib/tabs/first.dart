@@ -28,6 +28,15 @@ const List<NormalModel> listViewArray = [
       title: 'flutrer 下拉刷新，上拉更多',
       routePath: ''
   ),
+  const NormalModel(
+      title: 'flutrer 图片',
+      routePath: ''
+  ),
+  const NormalModel(
+      title: 'flutrer 插件的使用',
+      routePath: ''
+  ),
+
 
 ];
 
