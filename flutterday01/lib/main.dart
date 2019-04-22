@@ -23,6 +23,8 @@ import 'package:flutterday01/pages/Widget/GridView.dart';
 import 'package:flutterday01/pages/Widget/Flow.dart';
 import 'package:flutterday01/pages//cupertino/CupertinoTabPage.dart';
 import 'package:flutterday01/pages/ImageDemo/ImageDemoPage.dart';
+import 'package:flutterday01/pages/Animation/AnimationPage.dart';
+import 'package:flutterday01/pages/Animation/AnimationBuilderPage.dart';
 
 void main() {
   runApp(new MaterialApp(
@@ -51,6 +53,10 @@ void main() {
       '/CupertinoTabPage':(_)=> new ZDCupertinoTabPage(),
       '/ImageDemoPage' : (_)=> new ImageDemoPage(),
       '/ImageDemoPage1' : (_)=> new ImageDemoPage1(),
+      '/ImageDemoPage2': (_)=> new ImageDemoPage2(),
+      '/ImageDemoPage3':(_)=> new ImageDemoPage3(),
+      '/AnimationPage': (_)=> new AnimationPage(),
+      '/AnimationBuilderPage': (_)=> new AnimationBuilderPage(),
     },
     theme: new ThemeData(
       primarySwatch: Colors.blue,

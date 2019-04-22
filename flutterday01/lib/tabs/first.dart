@@ -14,7 +14,7 @@ const List<NormalModel> listViewArray = [
   ),
   const NormalModel(
       title: 'flutrer 动画',
-      routePath: ''
+      routePath: 'AnimationPage'
   ),
   const NormalModel(
       title: 'flutrer 数据存储，数据库',
@@ -34,6 +34,10 @@ const List<NormalModel> listViewArray = [
   ),
   const NormalModel(
       title: 'flutrer 插件的使用',
+      routePath: ''
+  ),
+  const NormalModel(
+      title: '多线程',
       routePath: ''
   ),
 
