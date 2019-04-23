@@ -30,7 +30,7 @@ const List<NormalModel> listViewArray = [
   ),
   const NormalModel(
       title: 'flutrer 网络请求',
-      routePath: ''
+      routePath: 'NetworkPage'
   ),
   const NormalModel(
       title: 'flutrer 下拉刷新，上拉更多',

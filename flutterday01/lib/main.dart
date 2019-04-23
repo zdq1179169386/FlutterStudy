@@ -28,6 +28,7 @@ import 'package:flutterday01/pages/Animation/AnimationBuilderPage.dart';
 import 'package:flutterday01/pages/Animation/AnimationListPage.dart';
 import 'package:flutterday01/pages/Animation/HeroAnimationPage.dart';
 import 'package:flutterday01/pages/Swiper/SwiperPage.dart';
+import 'package:flutterday01/pages/Network/NetworkPage.dart';
 
 void main() {
   runApp(new MaterialApp(
@@ -63,6 +64,7 @@ void main() {
       '/AnimationListPage': (_)=> new AnimationListPage(),
       '/HeroAnimationPage':(_)=> new HeroAnimationPage(),
       '/SwiperPage':(_)=> new SwiperPage(),
+      '/NetworkPage':(_)=> new NetworkPage(),
     },
     theme: new ThemeData(
       primarySwatch: Colors.blue,
