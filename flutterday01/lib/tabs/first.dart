@@ -14,7 +14,15 @@ const List<NormalModel> listViewArray = [
   ),
   const NormalModel(
       title: 'flutrer 动画',
-      routePath: 'AnimationPage'
+      routePath: 'AnimationListPage'
+  ),
+  const NormalModel(
+      title: 'flutrer 图片',
+      routePath: 'ImageDemoPage'
+  ),
+  const NormalModel(
+      title: 'flutrer 轮播',
+      routePath: 'SwiperPage'
   ),
   const NormalModel(
       title: 'flutrer 数据存储，数据库',
@@ -27,10 +35,6 @@ const List<NormalModel> listViewArray = [
   const NormalModel(
       title: 'flutrer 下拉刷新，上拉更多',
       routePath: ''
-  ),
-  const NormalModel(
-      title: 'flutrer 图片',
-      routePath: 'ImageDemoPage'
   ),
   const NormalModel(
       title: 'flutrer 插件的使用',

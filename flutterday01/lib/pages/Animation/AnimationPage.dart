@@ -32,15 +32,15 @@ class _AnimationPageState extends State<AnimationPage>
     return new Scaffold(
       appBar: new AppBar(
         title: new Text('动画'),
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(Icons.navigate_next),
-            tooltip: 'next',
-            onPressed: () {
-              Navigator.of(context).pushNamed('/AnimationBuilderPage');
-            },
-          )
-        ],
+//        actions: <Widget>[
+//          IconButton(
+//            icon: Icon(Icons.navigate_next),
+//            tooltip: 'next',
+//            onPressed: () {
+//              Navigator.of(context).pushNamed('/AnimationBuilderPage');
+//            },
+//          )
+//        ],
 
       ),
       body: new Container(
