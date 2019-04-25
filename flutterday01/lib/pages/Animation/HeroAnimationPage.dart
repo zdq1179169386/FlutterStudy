@@ -36,7 +36,8 @@ class PhotoHero extends StatelessWidget {
 class HeroAnimationPage extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
-    timeDilation = 5.0; // 1.0 means normal animation speed.
+//    timeDilation 这个是参数是控制动画时间的，改变之后，页面跳转动画的时间也会变慢，
+    timeDilation = 1.0; // 1.0 means normal animation speed.
     return new Scaffold(
       appBar: new AppBar(
         title: const Text('Basic Hero Animation'),
@@ -73,4 +74,5 @@ class HeroAnimationPage extends StatelessWidget{
       ),
     );
   }
+
 }

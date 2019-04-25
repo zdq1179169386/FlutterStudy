@@ -8,10 +8,7 @@ const List<NormalModel> listViewArray = [
     title: 'flutter UI 布局',
     routePath: 'flutter_ui_course'
   ),
-  const NormalModel(
-      title: 'iOS 样式的tabbar + nav ',
-      routePath: 'CupertinoTabPage'
-  ),
+
   const NormalModel(
       title: 'flutrer 动画',
       routePath: 'AnimationListPage'
@@ -33,10 +30,6 @@ const List<NormalModel> listViewArray = [
       routePath: 'NetworkPage'
   ),
   const NormalModel(
-      title: 'flutrer 下拉刷新，上拉更多',
-      routePath: ''
-  ),
-  const NormalModel(
       title: 'flutrer 插件的使用',
       routePath: ''
   ),
@@ -45,6 +38,10 @@ const List<NormalModel> listViewArray = [
       routePath: ''
   ),
 
+  const NormalModel(
+      title: 'Future 的用法',
+      routePath: 'FuturePage'
+  ),
 
 ];
 

@@ -1,4 +1,39 @@
 import 'package:flutter/material.dart';
+import 'package:flutterday01/Model/NormalModel.dart';
+import 'package:flutterday01/Views/ZDListViewItem.dart';
+
+const List<NormalModel> _listViewArray = [
+  const NormalModel(
+      title: 'iOS 样式的tabbar + nav ',
+      routePath: 'CupertinoTabPage'
+  ),
+  const NormalModel(
+      title: 'flutrer 下拉刷新，上拉更多',
+      routePath: 'RefreshPage'
+  ),
+
+  const NormalModel(
+      title: 'flutrer 调用相册',
+      routePath: ''
+  ),
+  const NormalModel(
+      title: 'flutrer 调用相机',
+      routePath: ''
+  ),
+  const NormalModel(
+      title: 'flutrer 定位',
+      routePath: ''
+  ),
+];
+
+//页面跳转
+void _navigateToPage(BuildContext context,String page){
+  print('Page : $page');
+  if(page.length == 0){
+    return;
+  }
+  Navigator.of(context).pushNamed('/$page');
+}
 
 class SecondTab extends StatelessWidget{
   @override
@@ -8,27 +43,19 @@ class SecondTab extends StatelessWidget{
 //      appBar: new AppBar(
 //        title: new Text('My Favorite'),
 //      ),
-      backgroundColor: Colors.red,
-      body: new Container(
-        child: new Center(
-          child: new Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              new Icon(
-                Icons.favorite,
-                size: 200,
-                color: Colors.white,
+      body: new ListView.builder(
+          itemBuilder: (BuildContext context,int index) {
+            return ListTile(
+              title: new ZDListViewItem(
+                index: index,
+                title: _listViewArray[index].title,
+                onPress: () {
+                  _navigateToPage(context,_listViewArray[index].routePath);
+                },
               ),
-              new Text(
-                'second Tab',
-                style: TextStyle(
-                  color: Colors.white,
-                ),
-              )
-            ],
-          ),
-        ),
-      ),
+            );
+      },
+      itemCount: _listViewArray.length),
     );
   }
 }

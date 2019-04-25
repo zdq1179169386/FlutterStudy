@@ -77,6 +77,10 @@ const List<NormalModel> listViewArray = [
       title: 'Flow 示例',
       routePath: 'Flow'
   ),
+  const NormalModel(
+      title: 'Wrap 示例',
+      routePath: 'WrapPage'
+  ),
 ];
 
 class FlutterUICoursePage extends StatelessWidget{

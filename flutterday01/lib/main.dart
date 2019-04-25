@@ -29,6 +29,9 @@ import 'package:flutterday01/pages/Animation/AnimationListPage.dart';
 import 'package:flutterday01/pages/Animation/HeroAnimationPage.dart';
 import 'package:flutterday01/pages/Swiper/SwiperPage.dart';
 import 'package:flutterday01/pages/Network/NetworkPage.dart';
+import 'package:flutterday01/pages/refresh/refresh_page.dart';
+import 'package:flutterday01/pages/Future/FuturePage.dart';
+import 'package:flutterday01/pages/Widget/Wrap.dart';
 
 void main() {
   runApp(new MaterialApp(
@@ -65,6 +68,9 @@ void main() {
       '/HeroAnimationPage':(_)=> new HeroAnimationPage(),
       '/SwiperPage':(_)=> new SwiperPage(),
       '/NetworkPage':(_)=> new NetworkPage(),
+      '/RefreshPage':(_)=> new RefreshPage(),
+      '/FuturePage': (_)=> new FuturePage(),
+      '/WrapPage':(_)=> new WrapPage(),
     },
     theme: new ThemeData(
       primarySwatch: Colors.blue,
@@ -99,6 +105,7 @@ class MyHomeState extends State<MyHome> with SingleTickerProviderStateMixin {
     // TODO: implement build
     return new Scaffold(
       appBar: new AppBar(
+//        滑动的时候，还是没法改变title
         title: new Text(navTitle ?? '首页'),
       ),
       body: new TabBarView(
@@ -116,7 +123,7 @@ class MyHomeState extends State<MyHome> with SingleTickerProviderStateMixin {
             ),
             new Tab(
               icon: new Icon(Icons.favorite, size: 28),
-              text: '喜爱',
+              text: '案例',
             ),
             new Tab(
               icon: new Icon(Icons.person, size: 28),
@@ -136,7 +143,7 @@ class MyHomeState extends State<MyHome> with SingleTickerProviderStateMixin {
               });
             } else if (index == 1) {
               setState(() {
-                navTitle = '最爱';
+                navTitle = '案例';
               });
             } else {
               setState(() {
