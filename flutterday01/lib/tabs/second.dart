@@ -14,7 +14,7 @@ const List<NormalModel> _listViewArray = [
 
   const NormalModel(
       title: 'flutrer 调用相册',
-      routePath: ''
+      routePath: 'ImagePickerPage'
   ),
   const NormalModel(
       title: 'flutrer 调用相机',
@@ -23,6 +23,10 @@ const List<NormalModel> _listViewArray = [
   const NormalModel(
       title: 'flutrer 定位',
       routePath: ''
+  ),
+  const NormalModel(
+      title: 'flutrer toast',
+      routePath: 'ToastPage'
   ),
 ];
 

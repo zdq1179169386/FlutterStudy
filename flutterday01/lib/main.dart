@@ -32,6 +32,8 @@ import 'package:flutterday01/pages/Network/NetworkPage.dart';
 import 'package:flutterday01/pages/refresh/refresh_page.dart';
 import 'package:flutterday01/pages/Future/FuturePage.dart';
 import 'package:flutterday01/pages/Widget/Wrap.dart';
+import 'package:flutterday01/pages/ImagePicker/image_picker_page.dart';
+import 'package:flutterday01/pages/Toast/ToastPage.dart';
 
 void main() {
   runApp(new MaterialApp(
@@ -71,6 +73,8 @@ void main() {
       '/RefreshPage':(_)=> new RefreshPage(),
       '/FuturePage': (_)=> new FuturePage(),
       '/WrapPage':(_)=> new WrapPage(),
+      '/ImagePickerPage':(_)=> new ImagePickerPage(),
+      '/ToastPage':(_)=> new ToastPage(),
     },
     theme: new ThemeData(
       primarySwatch: Colors.blue,
