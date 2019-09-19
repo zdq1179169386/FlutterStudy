@@ -160,8 +160,7 @@ class MyHomeState extends State<MyHome> with SingleTickerProviderStateMixin {
     );
   }
 
-  /*这种的，点击文字会有变大效果，
-  @override
+/*  @override
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
@@ -192,4 +191,5 @@ class MyHomeState extends State<MyHome> with SingleTickerProviderStateMixin {
       ),
     );
   }*/
+
 }

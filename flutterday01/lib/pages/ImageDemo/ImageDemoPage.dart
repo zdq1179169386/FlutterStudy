@@ -23,7 +23,7 @@ class ImageDemoPage1 extends StatelessWidget
       body: new Center(
         child: CachedNetworkImage(
           imageUrl: 'https://picsum.photos/250?image=9',
-          placeholder: (context,url) => new CircularProgressIndicator()
+          placeholder: (context,url) => new Image(image: AssetImage('images/pic.jpg'))
       ),
       ),
     );
