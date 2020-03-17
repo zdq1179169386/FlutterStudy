@@ -15,9 +15,6 @@ class SwiperPage extends StatelessWidget {
   }
 }
 
-
-
-
 class SwiperPageBody extends StatefulWidget {
 
   @override
@@ -26,10 +23,6 @@ class SwiperPageBody extends StatefulWidget {
     return _SwiperPageBodyState();
   }
 }
-
-
-
-
 
 class _SwiperPageBodyState extends State<SwiperPageBody> {
 //导航透明度

@@ -25,11 +25,7 @@ class RefreshPageBody extends StatefulWidget {
 
 class _RefreshPageBodyState extends State<RefreshPageBody> {
   List<String> _listViewArray = [];
-  GlobalKey<EasyRefreshState> _easyRefreshKey = new GlobalKey<EasyRefreshState>();
-  GlobalKey<RefreshHeaderState> _headerKey = new GlobalKey<RefreshHeaderState>();
-  GlobalKey<RefreshFooterState> _footerKey = new GlobalKey<RefreshFooterState>();
   bool _loadMore = true;
-
 
   @override
   void initState() {
@@ -43,37 +39,11 @@ class _RefreshPageBodyState extends State<RefreshPageBody> {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return Container(
-      child: new EasyRefresh(
-        key: _easyRefreshKey,
-          behavior: ScrollOverBehavior(),
-          refreshHeader: ClassicsHeader(
-            key: _headerKey,
-            refreshText: "pullToRefresh",
-            refreshReadyText: "releaseToRefresh",
-            refreshingText: "refreshing...",
-            refreshedText: "refreshed",
-            moreInfo: ("updateAt"),
-            bgColor: Colors.transparent,
-            textColor: Colors.black87,
-            moreInfoColor: Colors.black54,
-            showMore: true,
-          ),
-          refreshFooter: ClassicsFooter(
-            key: _footerKey,
-            loadText: ("pushToLoad"),
-            loadReadyText: ("releaseToLoad"),
-            loadingText: "loading",
-            loadedText: "loaded",
-            noMoreText: "noMore",
-            moreInfo: "updateAt",
-            bgColor: Colors.transparent,
-            textColor: Colors.black87,
-            moreInfoColor: Colors.black54,
-            showMore: true,
-          ),
+    return Center(
+      child: Container(
+        child: EasyRefresh(
           child: new ListView.builder(
-            itemCount: _listViewArray.length,
+              itemCount: _listViewArray.length,
               itemBuilder: (BuildContext context, int index) {
                 return Container(
                   height: 70,
@@ -87,31 +57,30 @@ class _RefreshPageBodyState extends State<RefreshPageBody> {
                   ),
                 );
               }),
-        onRefresh: () async{
-          await new Future.delayed(const Duration(seconds: 2), () {
-             setState(() {
-               _listViewArray.clear();
-               for(int i = 0; i < 10; i++){
-                 _listViewArray.add(i.toString());
-               }
-               _easyRefreshKey.currentState.waitState(() {
-                 setState(() {
-                   _loadMore = true;
-                 });
-               });
-             });
-          });
-        },
-        loadMore: _loadMore ? () async {
-          await new Future.delayed(Duration(seconds: 2), () {
+          onRefresh: () async{
+            await new Future.delayed(const Duration(seconds: 2), () {
               setState(() {
-                _listViewArray.add(_listViewArray.length.toString());
-
+                _listViewArray.clear();
+                for(int i = 0; i < 10; i++) {
+                  _listViewArray.add(i.toString());
+                }
+                _loadMore = true;
               });
-          }) ;
-        } : null,
+            });
+          },
+          onLoad: _loadMore ? () async{
+            await new Future.delayed(Duration(seconds: 2), () {
+              setState(() {
+                int count = _listViewArray.length;
+                for(int i = count; i < count + 5; i++){
+                  _listViewArray.add(i.toString());
+                }
+                _loadMore = _listViewArray.length > 30 ? false : true;
+              });
+            }) ;
+          } : null,
+        ),
       ),
-
     );
   }
 }

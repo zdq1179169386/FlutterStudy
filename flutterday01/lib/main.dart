@@ -66,15 +66,15 @@ void main() {
       '/ImageDemoPage3': (_) => new ImageDemoPage3(),
       '/AnimationPage': (_) => new AnimationPage(),
       '/AnimationBuilderPage': (_) => new AnimationBuilderPage(),
-      '/AnimationListPage': (_)=> new AnimationListPage(),
-      '/HeroAnimationPage':(_)=> new HeroAnimationPage(),
-      '/SwiperPage':(_)=> new SwiperPage(),
-      '/NetworkPage':(_)=> new NetworkPage(),
-      '/RefreshPage':(_)=> new RefreshPage(),
-      '/FuturePage': (_)=> new FuturePage(),
-      '/WrapPage':(_)=> new WrapPage(),
-      '/ImagePickerPage':(_)=> new ImagePickerPage(),
-      '/ToastPage':(_)=> new ToastPage(),
+      '/AnimationListPage': (_) => new AnimationListPage(),
+      '/HeroAnimationPage': (_) => new HeroAnimationPage(),
+      '/SwiperPage': (_) => new SwiperPage(),
+      '/NetworkPage': (_) => new NetworkPage(),
+      '/RefreshPage': (_) => new RefreshPage(),
+      '/FuturePage': (_) => new FuturePage(),
+      '/WrapPage': (_) => new WrapPage(),
+      '/ImagePickerPage': (_) => new ImagePickerPage(),
+      '/ToastPage': (_) => new ToastPage(),
     },
     theme: new ThemeData(
       primarySwatch: Colors.blue,
@@ -136,9 +136,10 @@ class MyHomeState extends State<MyHome> with SingleTickerProviderStateMixin {
             ),
           ],
           controller: controller,
-            labelPadding: EdgeInsets.fromLTRB(0, 0, 0, 8),
+          labelPadding: EdgeInsets.fromLTRB(0, 0, 0, 8),
 //去掉下划线
           indicatorWeight: 0.01,
+          isScrollable: false,//并不能禁止滑动
           onTap: (int index) {
             if (index == 0) {
 //              修改属性的时候，必须通过 setState 方法，这点跟 react 很像

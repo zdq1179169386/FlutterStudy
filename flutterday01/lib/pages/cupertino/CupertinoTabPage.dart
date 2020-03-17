@@ -31,6 +31,7 @@ class ZDCupertinoTabPage extends StatelessWidget {
                   ]),
               tabBuilder: (BuildContext buildContext,int index){
                 assert(index >= 0 && index <= 2);
+                // ignore: missing_return
                 switch(index){
                   case 0 :
                     return CupertinoTabView(
