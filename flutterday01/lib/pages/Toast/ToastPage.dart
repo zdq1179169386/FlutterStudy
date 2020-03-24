@@ -3,10 +3,8 @@ import 'package:fluttertoast/fluttertoast.dart';
 
 
 class ToastPage extends StatefulWidget{
-
   @override
   _ToastPageState createState() {
-    // TODO: implement createState
     return new _ToastPageState();
   }
 }

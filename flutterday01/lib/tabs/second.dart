@@ -28,6 +28,10 @@ const List<NormalModel> _listViewArray = [
       title: 'flutrer toast',
       routePath: 'ToastPage'
   ),
+  const NormalModel(
+      title: 'flutrer progress',
+      routePath: 'ProgressPage'
+  ),
 ];
 
 //页面跳转

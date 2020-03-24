@@ -5,7 +5,6 @@ import 'package:dio/dio.dart';
 class NetworkPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return new Scaffold(
       appBar: new AppBar(
         title: Text('NetworkPage'),
@@ -18,7 +17,6 @@ class NetworkPage extends StatelessWidget {
 class NetworkPageBody extends StatefulWidget {
   @override
   _NetworkPageBodyState createState() {
-    // TODO: implement createState
     return _NetworkPageBodyState();
   }
 }
@@ -28,7 +26,6 @@ class _NetworkPageBodyState extends State<NetworkPageBody> {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return ListView(
       children: <Widget>[
         Row(
@@ -37,14 +34,14 @@ class _NetworkPageBodyState extends State<NetworkPageBody> {
             RaisedButton(
               child: Text('get'),
               onPressed: () {
-                _get();
+                _push(context);
               },
               color: Colors.blue,
             ),
             RaisedButton(
               child: Text('post'),
               onPressed: () {
-                _post();
+                _push(context);
               },
               color: Colors.blue,
             ),
@@ -83,5 +80,9 @@ class _NetworkPageBodyState extends State<NetworkPageBody> {
     } on DioError catch (e) {
       print('error = ' + e.toString());
     }
+  }
+
+  _push(BuildContext context) {
+    Navigator.of(context).pushNamed('/NetworkNextPage');
   }
 }

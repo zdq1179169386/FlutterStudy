@@ -23,10 +23,10 @@ const List<NormalModel> listViewArray = [
   ),
   const NormalModel(
       title: 'flutrer 数据存储，数据库',
-      routePath: ''
+      routePath: 'DataSavePage'
   ),
   const NormalModel(
-      title: 'flutrer 网络请求',
+      title: 'flutrer 网络请求和 json 解析',
       routePath: 'NetworkPage'
   ),
   const NormalModel(
@@ -48,7 +48,6 @@ const List<NormalModel> listViewArray = [
 class FirstTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return new Scaffold(
 //        appBar: new AppBar(
 //          title: new Text('flutter UI 布局'),
@@ -59,7 +58,7 @@ class FirstTab extends StatelessWidget {
 }
 
 //页面跳转
-void _navigateToPage(BuildContext context,String page){
+void _navigateGoToPage(BuildContext context,String page){
   print('Page : $page');
   if(page.length == 0){
     return;
@@ -78,7 +77,7 @@ void _navigateToPage(BuildContext context,String page){
                 index: index,
                 title: listViewArray[index].title,
                 onPress: (){
-                    _navigateToPage(context, listViewArray[index].routePath);
+                    _navigateGoToPage(context, listViewArray[index].routePath);
                 },
               ),
             );

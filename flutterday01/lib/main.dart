@@ -34,6 +34,10 @@ import 'package:flutterday01/pages/Future/FuturePage.dart';
 import 'package:flutterday01/pages/Widget/Wrap.dart';
 import 'package:flutterday01/pages/ImagePicker/image_picker_page.dart';
 import 'package:flutterday01/pages/Toast/ToastPage.dart';
+import 'package:flutterday01/pages/Progress/ProgressPage.dart';
+import 'package:flutterday01/pages/Network/NetworkNextPage.dart';
+import 'package:flutterday01/pages/DataSave/DataSavePage.dart';
+import 'package:flutterday01/pages/DataSave/SharedPreferencesPage.dart';
 
 void main() {
   runApp(new MaterialApp(
@@ -75,6 +79,10 @@ void main() {
       '/WrapPage': (_) => new WrapPage(),
       '/ImagePickerPage': (_) => new ImagePickerPage(),
       '/ToastPage': (_) => new ToastPage(),
+      '/ProgressPage': (_) => new ProgressPage(),
+      '/NetworkNextPage' : (_) => new NetworkNextPage(),
+      '/DataSavePage': (_) => new DataSavePage(),
+      '/SharedPreferencesPage': (_)=> new SharedPreferencesPage()
     },
     theme: new ThemeData(
       primarySwatch: Colors.blue,

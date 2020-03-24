@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 
-
-class FuturePage extends StatelessWidget{
+// https://juejin.im/post/5d317e5af265da1b6c5faf73
+class FuturePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Scaffold(
       appBar: new AppBar(
         title: Text('FuturePage'),
@@ -15,10 +14,9 @@ class FuturePage extends StatelessWidget{
   }
 }
 
-class FuturePageBody extends StatelessWidget{
+class FuturePageBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: <Widget>[
@@ -40,8 +38,7 @@ class FuturePageBody extends StatelessWidget{
             onPressed: () {
               new Future(() {
 //                print('11');
-              throw new Exception('error');
-
+                throw new Exception('error');
               }).catchError((e) {
                 print('error' + e);
               });
@@ -52,16 +49,14 @@ class FuturePageBody extends StatelessWidget{
     );
   }
 
-  Future<String> _test() async{
+  Future<String> _test() async {
     new Future<String>(() {
 //      执行耗时操作
       throw new Exception('error');
-
-    return '123';
     });
   }
 
-  Future<String>  _test1() {
+  Future<String> _test1() {
     new Future.delayed(Duration(seconds: 3), () {
       return Future.value('123');
     });

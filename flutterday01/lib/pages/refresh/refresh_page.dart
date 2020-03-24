@@ -6,7 +6,6 @@ import 'dart:async';
 class RefreshPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return new Scaffold(
       appBar: AppBar(
         title: Text('RefreshPage'),
@@ -29,7 +28,6 @@ class _RefreshPageBodyState extends State<RefreshPageBody> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     for(int i = 0; i < 10; i++){
       _listViewArray.add(i.toString());
@@ -38,7 +36,6 @@ class _RefreshPageBodyState extends State<RefreshPageBody> {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Center(
       child: Container(
         child: EasyRefresh(
