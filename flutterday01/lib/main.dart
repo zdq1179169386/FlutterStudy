@@ -38,6 +38,7 @@ import 'package:flutterday01/pages/Progress/ProgressPage.dart';
 import 'package:flutterday01/pages/Network/NetworkNextPage.dart';
 import 'package:flutterday01/pages/DataSave/DataSavePage.dart';
 import 'package:flutterday01/pages/DataSave/SharedPreferencesPage.dart';
+import 'package:flutterday01/pages/DataSave/SQLitePage.dart';
 
 void main() {
   runApp(new MaterialApp(
@@ -82,7 +83,8 @@ void main() {
       '/ProgressPage': (_) => new ProgressPage(),
       '/NetworkNextPage' : (_) => new NetworkNextPage(),
       '/DataSavePage': (_) => new DataSavePage(),
-      '/SharedPreferencesPage': (_)=> new SharedPreferencesPage()
+      '/SharedPreferencesPage': (_)=> new SharedPreferencesPage(),
+      '/SQLitePage' : (_)=> new SQLitePage(),
     },
     theme: new ThemeData(
       primarySwatch: Colors.blue,
@@ -114,7 +116,6 @@ class MyHomeState extends State<MyHome> with SingleTickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return new Scaffold(
       appBar: new AppBar(
 //        滑动的时候，还是没法改变title

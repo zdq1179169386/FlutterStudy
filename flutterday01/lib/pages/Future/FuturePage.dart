@@ -17,34 +17,31 @@ class FuturePage extends StatelessWidget {
 class FuturePageBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
       children: <Widget>[
-        Expanded(
-          child: RaisedButton(
-            child: Text('future'),
-            onPressed: () {
-              _test().then((s) {
-                print(s);
-              }).catchError((e) {
-                print(e);
-              });
-            },
-          ),
+        RaisedButton(
+          child: Text('future'),
+          onPressed: () {
+            _test().then((s) {
+              print(s);
+            }).catchError((e) {
+              print(e);
+            });
+          },
         ),
-        Expanded(
-          child: RaisedButton(
-            child: Text('future'),
-            onPressed: () {
-              new Future(() {
+        RaisedButton(
+          child: Text('future'),
+          onPressed: () {
+            new Future(() {
 //                print('11');
-                throw new Exception('error');
-              }).catchError((e) {
-                print('error' + e);
-              });
-            },
-          ),
-        )
+              throw new Exception('error');
+            }).catchError((e) {
+              print('error' + e);
+            });
+          },
+        ),
+        Text('具体看这篇文章: https://juejin.im/post/5d317e5af265da1b6c5faf73')
       ],
     );
   }

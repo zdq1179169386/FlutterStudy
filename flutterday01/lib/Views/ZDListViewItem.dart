@@ -8,7 +8,6 @@ class ZDListViewItem extends StatelessWidget{
   final VoidCallback onPress;
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return new GestureDetector(
       onTap: onPress,
       child: new Center(

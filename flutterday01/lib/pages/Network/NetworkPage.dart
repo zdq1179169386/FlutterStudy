@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:async';
 import 'package:dio/dio.dart';
 
 class NetworkPage extends StatelessWidget {

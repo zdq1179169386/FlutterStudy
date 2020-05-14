@@ -13,7 +13,6 @@ class _AnimationPageState extends State<AnimationPage>
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     controller = new AnimationController(
       vsync: this,
@@ -28,7 +27,6 @@ class _AnimationPageState extends State<AnimationPage>
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return new Scaffold(
       appBar: new AppBar(
         title: new Text('动画'),

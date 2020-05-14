@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'dart:async';
 
-
 class RefreshPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -29,7 +28,7 @@ class _RefreshPageBodyState extends State<RefreshPageBody> {
   @override
   void initState() {
     super.initState();
-    for(int i = 0; i < 10; i++){
+    for (int i = 0; i < 10; i++) {
       _listViewArray.add(i.toString());
     }
   }
@@ -54,28 +53,33 @@ class _RefreshPageBodyState extends State<RefreshPageBody> {
                   ),
                 );
               }),
-          onRefresh: () async{
+          onRefresh: () async {
             await new Future.delayed(const Duration(seconds: 2), () {
               setState(() {
                 _listViewArray.clear();
-                for(int i = 0; i < 10; i++) {
+                for (int i = 0; i < 10; i++) {
                   _listViewArray.add(i.toString());
                 }
                 _loadMore = true;
               });
             });
           },
-          onLoad: _loadMore ? () async{
-            await new Future.delayed(Duration(seconds: 2), () {
-              setState(() {
-                int count = _listViewArray.length;
-                for(int i = count; i < count + 5; i++){
-                  _listViewArray.add(i.toString());
+          onLoad: _loadMore
+              ? () async {
+                  if (this == null) {
+                    return;
+                  }
+                  await new Future.delayed(Duration(seconds: 2), () {
+                    setState(() {
+                      int count = _listViewArray.length;
+                      for (int i = count; i < count + 5; i++) {
+                        _listViewArray.add(i.toString());
+                      }
+                      _loadMore = _listViewArray.length > 30 ? false : true;
+                    });
+                  });
                 }
-                _loadMore = _listViewArray.length > 30 ? false : true;
-              });
-            }) ;
-          } : null,
+              : null,
         ),
       ),
     );

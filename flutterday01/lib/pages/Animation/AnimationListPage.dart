@@ -23,7 +23,6 @@ const List<NormalModel> listViewArray = [
 class AnimationListPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return new Scaffold(
       appBar: new AppBar(
         title: Text('AnimationListPage'),
@@ -46,7 +45,6 @@ void _navigateToPage(BuildContext context,String page){
 class AnimationListPageBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return new ListView.builder(
       itemBuilder: (BuildContext context, int index) {
         return ListTile(

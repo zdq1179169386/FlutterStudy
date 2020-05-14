@@ -26,7 +26,9 @@ class _DataSavePage extends State {
           RaisedButton(
             child: Text('数据库', style: TextStyle(fontSize: 17, color: Colors.white)),
             color: Colors.blueAccent,
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).pushNamed('/SQLitePage');
+            },
           )
         ]),
       )),

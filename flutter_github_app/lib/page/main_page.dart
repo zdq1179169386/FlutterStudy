@@ -1,19 +1,18 @@
-import 'dart:ui';
-import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:xiecheng_flutter/page/home_page.dart';
-import 'package:xiecheng_flutter/page/mine_page.dart';
-import 'package:xiecheng_flutter/page/search_page.dart';
-import 'package:xiecheng_flutter/page/travel_page.dart';
 
-class RootPage extends StatefulWidget {
+import 'package:flutter/material.dart';
+import 'package:flutter_github_app/page/home_page.dart';
+import 'package:flutter_github_app/page/mine_page.dart';
+
+class MainPage extends StatefulWidget{
+  static final String pageName = "/main";
+
   @override
   State<StatefulWidget> createState() {
-    return _RootPageState();
+    return _MainPageState();
   }
 }
 
-class _RootPageState extends State<RootPage> {
+class _MainPageState extends State {
   final _defaultColor = Colors.grey;
   final _activeColor = Colors.blue;
   int _currentIndex = 0;
@@ -26,8 +25,6 @@ class _RootPageState extends State<RootPage> {
           controller: _pageController,
           children: <Widget>[
             HomePage(),
-            SearchPage(),
-            TravelPage(),
             MinePage(),
           ],
           physics: NeverScrollableScrollPhysics()),
@@ -44,9 +41,7 @@ class _RootPageState extends State<RootPage> {
         type: BottomNavigationBarType.fixed,
         items: [
           _bottomItem('首页', Icons.home, 0),
-          _bottomItem('搜索', Icons.search, 1),
-          _bottomItem('旅拍', Icons.camera_alt, 2),
-          _bottomItem('我的', Icons.account_circle, 3),
+          _bottomItem('我的', Icons.account_circle, 1),
         ],
       ),
     );

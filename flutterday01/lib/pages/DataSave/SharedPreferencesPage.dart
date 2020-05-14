@@ -17,6 +17,7 @@ class _SharedPreferencesPage extends State {
     super.initState();
     _add();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,19 +62,20 @@ class _SharedPreferencesPage extends State {
       )),
     );
   }
-
+//增
   _add() async {
     _counter = 10;
     final prefs = await SharedPreferences.getInstance();
     prefs.setInt('counter', _counter);
+    
   }
-
+//删
   _delete() async {
     final prefs = await SharedPreferences.getInstance();
-        _counter = 0;
+    _counter = 0;
     prefs.remove('counter');
   }
-
+//改
   _edit() async {
     final prefs = await SharedPreferences.getInstance();
     final counter = prefs.getInt('counter') ?? 0;
@@ -82,7 +84,7 @@ class _SharedPreferencesPage extends State {
       _counter = counter;
     });
   }
-
+//查
   _read() async {
     final prefs = await SharedPreferences.getInstance();
     final counter = prefs.getInt('counter') ?? 0;

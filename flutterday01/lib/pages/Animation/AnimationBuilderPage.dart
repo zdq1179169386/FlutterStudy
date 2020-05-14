@@ -4,7 +4,6 @@ import 'package:flutter/animation.dart';
 class LogoWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return new Container(
       margin: new EdgeInsets.symmetric(vertical: 10),
       child: new FlutterLogo(),
@@ -20,7 +19,6 @@ class GrowTransition extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return new Center(
       child: new AnimatedBuilder(
           animation: animation,
