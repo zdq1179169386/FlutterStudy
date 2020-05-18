@@ -3,6 +3,8 @@ import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_github_app/page/main_page.dart';
+import 'package:flutter_github_app/state/user_state.dart';
 
 class LoginPage extends StatefulWidget{
   static final String pageName = "/login";
@@ -13,23 +15,22 @@ class LoginPage extends StatefulWidget{
 }
 
 class _LoginPageState extends State<LoginPage>{
-  var _username = "";
-  var _password = "";
+  TextEditingController _unameController = new TextEditingController();
+  TextEditingController _pwdController = new TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    return CupertinoPageScaffold(
-      navigationBar: CupertinoNavigationBar(
-        heroTag: 'login',
-        transitionBetweenRoutes: false,
-        middle: Text('Login',style: TextStyle(fontSize: 18)),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Login',style: TextStyle(fontSize: 18)),
       ),
-      child: Scaffold(
-          body: SafeArea(
+      body: Container(
+          child: SafeArea(
             child: Column(
               children: <Widget>[
                 Container(
                   child:CupertinoTextField(
+                    controller: _unameController,
                     autofocus: true,
                     style: TextStyle(fontSize: 15),
                     placeholder: "用户名",
@@ -44,6 +45,7 @@ class _LoginPageState extends State<LoginPage>{
                 ),
                 Container(
                   child:CupertinoTextField(
+                    controller: _pwdController,
                     obscureText: true,
                     autofocus: true,
                     style: TextStyle(fontSize: 15),
@@ -61,9 +63,9 @@ class _LoginPageState extends State<LoginPage>{
                   child: CupertinoButton(
                     child: Text("登录",style: TextStyle(fontSize: 17,color: Colors.white)),
                     onPressed: (){
-                       login();
+                       login(context);
                     },
-                    color: Colors.blue,
+                    color: Theme.of(context).primaryColor,
                     padding: const EdgeInsets.fromLTRB(150, 0, 150, 0),
                     borderRadius: const BorderRadius.all(Radius.circular(23)),
                   ),
@@ -77,7 +79,14 @@ class _LoginPageState extends State<LoginPage>{
     );
   }
 
-  login() {
+  login(BuildContext context) async {
+    UserState().login(context, _unameController.text, _pwdController.text);
+  }
 
+  @override
+  void dispose() {
+    _unameController.dispose();
+    _pwdController.dispose();
+    super.dispose();
   }
 }

@@ -1,5 +1,5 @@
-
 import 'package:flutter/material.dart';
+import 'package:flutter_github_app/generated/l10n.dart';
 import 'package:flutter_github_app/page/home_page.dart';
 import 'package:flutter_github_app/page/mine_page.dart';
 
@@ -12,14 +12,15 @@ class MainPage extends StatefulWidget{
   }
 }
 
-class _MainPageState extends State {
+class _MainPageState extends State<MainPage> {
   final _defaultColor = Colors.grey;
-  final _activeColor = Colors.blue;
   int _currentIndex = 0;
   final PageController _pageController = PageController(initialPage: 0);
 
   @override
   Widget build(BuildContext context) {
+    print("mine:"+S.of(context).home);
+    print("mine:" + S.of(context).home);
     return Scaffold(
       body: PageView(
           controller: _pageController,
@@ -40,14 +41,14 @@ class _MainPageState extends State {
         },
         type: BottomNavigationBarType.fixed,
         items: [
-          _bottomItem('首页', Icons.home, 0),
-          _bottomItem('我的', Icons.account_circle, 1),
+          _bottomItem(S.of(context).home, Icons.home, 0),
+          _bottomItem(S.of(context).mine, Icons.account_circle, 1),
         ],
       ),
     );
   }
 
-  _bottomItem(String title, IconData icon, int index) {
+   _bottomItem(String title, IconData icon, int index) {
     return BottomNavigationBarItem(
         icon: Icon(
           icon,
@@ -55,12 +56,13 @@ class _MainPageState extends State {
         ),
         activeIcon: Icon(
           icon,
-          color: _activeColor,
+          color: Theme.of(context).primaryColor,
         ),
         title: Text(
           title,
           style: TextStyle(
-              color: _currentIndex != index ? _defaultColor : _activeColor),
-        ));
+              color: _currentIndex != index ? _defaultColor : Theme.of(context).primaryColor),
+        )
+    );
   }
 }

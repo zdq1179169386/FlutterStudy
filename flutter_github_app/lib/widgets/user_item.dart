@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class BasicListviewCell extends StatelessWidget{
+class UserItem extends StatelessWidget{
   ///初始化
-  BasicListviewCell({this.index,this.title,this.onPress});
+  UserItem({this.index,this.title,this.onPress});
   ///索引
   final int index;
   ///标题
   final String title;
-///无返回值的callback,父类传过来的点击事件
+  ///无返回值的callback,父类传过来的点击事件
   final VoidCallback onPress;
 
   @override
@@ -22,7 +22,7 @@ class BasicListviewCell extends StatelessWidget{
               child: Text('$title',style: TextStyle(fontSize: 15)),
             ),
             Container(
-              child: new Icon(Icons.arrow_forward_ios,size: 20,color: Colors.blue),
+              child: new Icon(Icons.arrow_forward_ios,size: 20,color: Colors.black),
               padding: const EdgeInsets.only(right: 10),
             ),
           ],
